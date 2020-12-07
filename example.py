@@ -5,6 +5,8 @@ CACHE_SIZE = 1024
 
 
 class Point(object):
+    """Point class"""
+    # The class name
     name = "foo"
 
     def __init__(self, a: int, b: int) -> None:
