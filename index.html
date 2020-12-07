@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'/>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css">
+<link rel="stylesheet" href="/css/prims.css">
+<link rel="stylesheet" href="/css/pygments.css">
+<style>
+body { font-size: 16px; }
+pre, pre code {
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+}
+</style>
+</head>
+<body>
+<div id="hljs">
+<h1>Highlight.js</h1>
+<pre><code class="language-python hljs"><span class="hljs-keyword">import</span> math
+<span class="hljs-keyword">from</span> functools <span class="hljs-keyword">import</span> lru_cache
+
+CACHE_SIZE = <span class="hljs-number">1024</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Point</span>(<span class="hljs-params"><span class="hljs-built_in">object</span></span>):</span>
+    name = <span class="hljs-string">"foo"</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self, a: <span class="hljs-built_in">int</span>, b: <span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-keyword">None</span>:</span>
+        self.a = a
+        self.b = b
+
+<span class="hljs-meta">    @lru_cache(<span class="hljs-params">maxsize=CACHE_SIZE</span>)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">magic</span>(<span class="hljs-params">self</span>) -&gt; str:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"magic"</span>
+
+<span class="hljs-meta">    @staticmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">distance</span>(<span class="hljs-params">a: <span class="hljs-built_in">int</span>, b: <span class="hljs-built_in">int</span></span>) -&gt; float:</span>
+        dis = a ** <span class="hljs-number">2</span> + b ** <span class="hljs-number">2</span>
+        <span class="hljs-keyword">return</span> math.sqrt(dis)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span>(<span class="hljs-params">self</span>) -&gt; str:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">f"Point(<span class="hljs-subst">{self.a}</span>, <span class="hljs-subst">{self.b}</span>)"</span>
+</code></pre></div>
+<div id="prismjs">
+<h1>Prism.js</h1>
+<pre class="  language-python"><code class="  language-python"><span class="token keyword">import</span> math
+<span class="token keyword">from</span> functools <span class="token keyword">import</span> lru_cache
+
+CACHE_SIZE <span class="token operator">=</span> <span class="token number">1024</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">Point</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> <span class="token string">"foo"</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> a<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>a <span class="token operator">=</span> a
+        self<span class="token punctuation">.</span>b <span class="token operator">=</span> b
+
+    <span class="token decorator annotation punctuation">@lru_cache</span><span class="token punctuation">(</span>maxsize<span class="token operator">=</span>CACHE_SIZE<span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">magic</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">"magic"</span>
+
+    <span class="token decorator annotation punctuation">@staticmethod</span>
+    <span class="token keyword">def</span> <span class="token function">distance</span><span class="token punctuation">(</span>a<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">float</span><span class="token punctuation">:</span>
+        dis <span class="token operator">=</span> a <span class="token operator">**</span> <span class="token number">2</span> <span class="token operator">+</span> b <span class="token operator">**</span> <span class="token number">2</span>
+        <span class="token keyword">return</span> math<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span>dis<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f"Point(</span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>a<span class="token punctuation">}</span></span><span class="token string">, </span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>b<span class="token punctuation">}</span></span><span class="token string">)"</span></span>
+</code></pre></div>
+
+<div id="pygments">
+<h1>Pygments</h1>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">lru_cache</span>
+
+<span class="n">CACHE_SIZE</span> <span class="o">=</span> <span class="mi">1024</span>
+
+
+<span class="k">class</span> <span class="nc">Point</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;foo&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
+
+    <span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="n">CACHE_SIZE</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">magic</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;magic&quot;</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">dis</span> <span class="o">=</span> <span class="n">a</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">b</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dis</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Point(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="si">}</span><span class="s2">)&quot;</span>
+</pre></div>
+</div>
+</body>
+</html>

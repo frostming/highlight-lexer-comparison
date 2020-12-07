@@ -1,0 +1,17 @@
+[tool]
+[tool.pdm]
+name = "hight-lexer-comparison"
+description = ""
+author = "Frost Ming <mianghong@gmail.com>"
+license = "MIT"
+homepage = ""
+python_requires = ">=3.7"
+
+[tool.pdm.dependencies]
+pygments = "<3.0.0,>=2.7.3"
+
+[tool.pdm.dev-dependencies]
+
+[build-system]
+requires = ["pdm-pep517"]
+build-backend = "pdm.pep517.api"
