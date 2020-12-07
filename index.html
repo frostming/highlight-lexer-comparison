@@ -8,8 +8,8 @@
 <meta name="description" content="">
 <meta name="keywords" content="">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css">
-<link rel="stylesheet" href="/css/prims.css">
-<link rel="stylesheet" href="/css/pygments.css">
+<link rel="stylesheet" href="css/prims.css">
+<link rel="stylesheet" href="css/pygments.css">
 <style>
 body { font-size: 16px; }
 pre, pre code {
@@ -100,34 +100,6 @@ CACHE_SIZE <span class="token operator">=</span> <span class="token number">1024
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Point(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="si">}</span><span class="s2">)&quot;</span>
 </pre></div>
-</div>
-<div id="github">
-<h1>GitHub</h1>
-<pre><code class="language-python">import math
-from functools import lru_cache
-
-CACHE_SIZE = 1024
-
-
-class Point(object):
-    name = "foo"
-
-    def __init__(self, a: int, b: int) -> None:
-        self.a = a
-        self.b = b
-
-    @lru_cache(maxsize=CACHE_SIZE)
-    def magic(self) -> str:
-        return "magic"
-
-    @staticmethod
-    def distance(a: int, b: int) -> float:
-        dis = a ** 2 + b ** 2
-        return math.sqrt(dis)
-
-    def __str__(self) -> str:
-        return f"Point({self.a}, {self.b})"
-</code></pre>
 </div>
 </body>
 </html>
